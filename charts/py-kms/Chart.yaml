@@ -1,0 +1,16 @@
+apiVersion: v2
+name: py-kms
+description: A Helm chart for py-kms KMS server
+type: application
+version: 0.1.0
+appVersion: "1.16.0"
+keywords:
+  - python
+  - kms
+home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/py-kms
+maintainers:
+  - name: Jubast
+dependencies:
+  - name: common
+    repository: https://jubast.github.io/homeserver-helm-charts/
+    version: 1.0.0
