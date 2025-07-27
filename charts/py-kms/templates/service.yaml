@@ -32,8 +32,8 @@ spec:
     - name: kms
       port: {{ .Values.service.ports.kms }}
       targetPort: kms
-      {{- if and (or (eq .Values.service.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.http)) }}
-      nodePort: {{ .Values.service.nodePorts.http }}
+      {{- if and (or (eq .Values.service.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.kms)) }}
+      nodePort: {{ .Values.service.nodePorts.kms }}
       {{- else if eq .Values.service.type "ClusterIP" }}
       nodePort: null
       {{- end }}
