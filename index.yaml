@@ -18,4 +18,25 @@ entries:
     urls:
     - https://github.com/Jubast/homeserver-helm-charts/releases/download/common-1.0.0/common-1.0.0.tgz
     version: 1.0.0
-generated: "2025-07-27T09:46:06.654947269Z"
+  py-kms:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-07-27T10:32:25.28367776Z"
+    dependencies:
+    - name: common
+      repository: https://jubast.github.io/homeserver-helm-charts/
+      version: 1.0.0
+    description: A Helm chart for py-kms KMS server
+    digest: 0bcef8a94bf8bbefce30ed98a444583621e85535e0b6bbaea15462ed153ce8d9
+    home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/py-kms
+    keywords:
+    - python
+    - kms
+    maintainers:
+    - name: Jubast
+    name: py-kms
+    type: application
+    urls:
+    - https://github.com/Jubast/homeserver-helm-charts/releases/download/py-kms-0.1.0/py-kms-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-07-27T10:32:25.283687368Z"
