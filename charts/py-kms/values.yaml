@@ -89,11 +89,11 @@ image:
 ## @param logLevel of the application
 ## ref: https://py-kms.readthedocs.io/en/latest/Usage.html#docker-environment
 ##
-logLevel: ERROR
+logLevel: DEBUG
 ## @param logFile of the application
 ## ref: https://py-kms.readthedocs.io/en/latest/Usage.html#docker-environment
 ##
-logFile: /log/pykms_logserver.log
+logFile: /tmp/pykms_logserver.log
 ## @param command Override default container command (useful when using custom images)
 ##
 command: []
@@ -333,7 +333,7 @@ podLabels: {}
 service:
   ## @param service.type Kubernetes Service type
   ##
-  type: LoadBalancer
+  type: ClusterIP
   ## @param service.ports.kms Service KMS port
   ##
   ports:
