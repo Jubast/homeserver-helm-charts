@@ -10,6 +10,8 @@ keywords:
 home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/py-kms
 maintainers:
   - name: Jubast
+    email: 30406814+Jubast@users.noreply.github.com
+    url: https://github.com/Jubast
 dependencies:
   - name: common
     repository: https://jubast.github.io/homeserver-helm-charts/
