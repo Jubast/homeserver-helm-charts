@@ -1,0 +1,109 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "common.names.fullname" . }}
+  namespace: {{ include "common.names.namespace" . | quote }}
+  labels: {{- include "common.labels.standard" ( dict "customLabels" .Values.commonLabels "context" $ ) | nindent 4 }}
+  {{- if .Values.commonAnnotations }}
+  annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
+  {{- end }}
+data:
+  # DEPLOMENT settings
+  DOMAIN: {{ include "vaultwarden.domain" . }}
+  WEB_VAULT_ENABLED: {{ .Values.webVaultEnabled | quote }}
+  ROCKET_ADDRESS: {{ .Values.listenAddress | quote }}
+  ROCKET_WORKERS: {{ .Values.activeWorkers | quote }}
+  ROCKET_PORT: {{ .Values.containerPorts.http | quote }}  
+  IP_HEADER: {{ .Values.ipHeader | quote }}
+  {{- with .Values.experimentalClientFeatureFlags }}
+  EXPERIMENTAL_CLIENT_FEATURE_FLAGS: {{ . | quote }}
+  {{- end }}
+  {{- with .Values.timeZone }}
+  TZ: {{ . | quote }}
+  {{- end }}
+  {{- with .Values.hibpApiKey }}
+  HIBP_API_KEY: {{ . | quote }}
+  {{- end }}
+  ADMIN_RATELIMIT_SECONDS: {{ .Values.adminRateLimitSeconds | quote }}
+  ADMIN_RATELIMIT_MAX_BURST: {{ .Values.adminRateLimitMaxBurst | quote }}
+  # USAGE settings
+  REQUIRE_DEVICE_EMAIL: {{ .Values.requireDeviceEmail | quote }}
+  EMAIL_CHANGE_ALLOWED: {{ .Values.emailChangeAllowed | quote }}
+  SHOW_PASSWORD_HINT: {{ .Values.showPassHint | quote }}
+  TRASH_AUTO_DELETE_DAYS: {{ .Values.trashAutoDeleteDays | quote }}
+  # SIGNUP settings
+  SIGNUPS_ALLOWED: {{ .Values.signupsAllowed | quote }}
+  SIGNUPS_VERIFY: {{ .Values.signupsVerify | quote }}
+  {{- if .Values.signupDomains }}
+  SIGNUPS_DOMAINS_WHITELIST: {{ .Values.signupDomains | quote }}
+  {{- end }}
+  # INVITATIONS settings
+  INVITATIONS_ALLOWED: {{ .Values.invitationsAllowed | quote }}
+  INVITATION_ORG_NAME: {{ .Values.invitationOrgName | quote }}
+  INVITATION_EXPIRATION_HOURS: {{ .Values.invitationExpirationHours | quote}}  
+  # ORGANIZATION settings
+  ORG_EVENTS_ENABLED: {{ .Values.orgEventsEnabled | quote }}
+  {{- with .Values.orgCreationUsers }}
+  ORG_CREATION_USERS: {{ . | quote }}
+  {{- end }}
+  # EMERGENCY settings
+  EMERGENCY_ACCESS_ALLOWED: {{ .Values.emergencyAccessAllowed | quote }}
+  EMERGENCY_NOTIFICATION_REMINDER_SCHEDULE: {{ .Values.emergencyNotifReminderSched | quote }}
+  EMERGENCY_REQUEST_TIMEOUT_SCHEDULE: {{ .Values.emergencyRqstTimeoutSched | quote }}
+  # SCHEDULED JOBS settings
+  {{- if .Values.eventsDayRetain }}
+  EVENTS_DAYS_RETAIN: {{ .Values.eventsDayRetain | quote }}
+  EVENT_CLEANUP_SCHEDULE: {{ .Values.eventCleanupSched | quote }}
+  {{- end }}  
+  # STORAGE settings
+  DATA_FOLDER: {{ .Values.persistence.dataPath | quote }}
+  ATTACHMENTS_FOLDER: {{ .Values.persistence.attachmentsPath | quote }}
+  # ATTACHMENTS settings
+  {{- with .Values.orgAttachmentLimit }}
+  ORG_ATTACHMENT_LIMIT: {{ . | quote }}
+  {{- end }}
+  {{- with .Values.userAttachmentLimit }}
+  USER_ATTACHMENT_LIMIT: {{ . | quote }}
+  {{- end }}
+  # SENDS settings
+  SENDS_ALLOWED: {{ .Values.sendsAllowed | quote }}
+  {{- with .Values.userSendLimit }}
+  USER_SEND_LIMIT: {{ . | quote }}
+  {{- end }}  
+  # ICON fetching settings
+  ICON_SERVICE: {{ .Values.iconService | quote }}
+  ICON_REDIRECT_CODE: {{ .Values.iconRedirectCode | quote }}
+  ICON_BLACKLIST_NON_GLOBAL_IPS: {{ .Values.iconBlacklistNonGlobalIps | quote }}
+  # SMTP settings
+  {{- if and .Values.smtp.host .Values.smtp.from }}
+  SMTP_HOST: {{ .Values.smtp.host | quote }}
+  SMTP_SECURITY: {{ .Values.smtp.security | quote }}
+  SMTP_PORT: {{ .Values.smtp.port | quote }}
+  {{- if .Values.smtp.authMechanism }}
+  SMTP_AUTH_MECHANISM: {{ .Values.smtp.authMechanism | quote }}
+  {{- end }}
+  SMTP_FROM: {{ .Values.smtp.from | quote }}
+  SMTP_FROM_NAME: {{ default "Vaultwarden" .Values.smtp.fromName | quote }}
+  SMTP_ACCEPT_INVALID_HOSTNAMES: {{ .Values.smtp.acceptInvalidHostnames | quote }}
+  SMTP_ACCEPT_INVALID_CERTS: {{ .Values.smtp.acceptInvalidCerts | quote }}
+  SMTP_DEBUG: {{ .Values.smtp.debug | quote }}
+  {{- end }}
+  # PUSH notification settings
+  {{- if .Values.pushNotifications.enabled }}
+  PUSH_ENABLED: "true"
+  {{- end }}
+  {{- with .Values.pushNotifications.relayUri }}
+  PUSH_RELAY_URI: {{ . | quote }}
+  {{- end }}
+  {{- with .Values.pushNotifications.identityUri }}
+  PUSH_IDENTITY_URI: {{ . | quote }}
+  {{- end }}
+  # LOGGING settings
+  {{- if .Values.logFile }}
+  LOG_FILE: {{ .Values.logFile | quote }}
+  {{- end }}
+  {{- if .Values.logLevel }}
+  LOG_LEVEL: {{ .Values.logLevel | quote }}
+  {{- end }}
+  EXTENDED_LOGGING: {{ .Values.extendedLogging | quote }}
+  LOG_TIMESTAMP_FORMAT: {{ .Values.logTimestampFormat | quote }}
