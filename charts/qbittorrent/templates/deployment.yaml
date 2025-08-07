@@ -70,9 +70,12 @@ spec:
           securityContext: {{- include "common.compatibility.renderSecurityContext" (dict "secContext" .Values.containerSecurityContext "context" $) | nindent 12 }}
           {{- end }}
           env:
-            TZ: {{ .Values.timeZone | quote }}
-            WEBUI_PORT: {{ .Values.containerPorts.http | quote }}
-            TORRENTING_PORT: {{ .Values.containerPorts.torrenting | quote }}
+            - name: TZ
+              value: {{ .Values.timeZone | quote }}
+            - name: WEBUI_PORT
+              value: {{ .Values.containerPorts.http | quote }}
+            - name: TORRENTING_PORT
+              value: {{ .Values.containerPorts.torrenting | quote }}
             {{- if .Values.extraEnvVars }}
             {{- include "common.tplvalues.render" (dict "value" .Values.extraEnvVars "context" $) | nindent 12 }}
             {{- end }}
