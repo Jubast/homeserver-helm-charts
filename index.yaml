@@ -82,6 +82,28 @@ entries:
   qbittorrent:
   - apiVersion: v2
     appVersion: 5.1.2
+    created: "2025-08-07T17:46:48.914186721Z"
+    dependencies:
+    - name: common
+      repository: https://jubast.github.io/homeserver-helm-charts/
+      version: 1.0.0
+    description: A Helm chart for qBittorrent
+    digest: 1e6f6c9f7dbed9e2cc8843a818fa5bcd9011646aea0fe09158745ada35929d6a
+    home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/qbittorrent
+    keywords:
+    - python
+    - kms
+    maintainers:
+    - email: 30406814+Jubast@users.noreply.github.com
+      name: Jubast
+      url: https://github.com/Jubast
+    name: qbittorrent
+    type: application
+    urls:
+    - https://github.com/Jubast/homeserver-helm-charts/releases/download/qbittorrent-0.0.2/qbittorrent-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 5.1.2
     created: "2025-08-07T17:29:22.111618516Z"
     dependencies:
     - name: common
@@ -125,4 +147,4 @@ entries:
     urls:
     - https://github.com/Jubast/homeserver-helm-charts/releases/download/vaultwarden-0.0.1/vaultwarden-0.0.1.tgz
     version: 0.0.1
-generated: "2025-08-07T17:29:22.111655345Z"
+generated: "2025-08-07T17:46:48.914223492Z"
