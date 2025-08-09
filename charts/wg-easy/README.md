@@ -1,6 +1,6 @@
 # wg-easy
 
-![Version: 0.0.3](https://img.shields.io/badge/Version-0.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 15.1.0](https://img.shields.io/badge/AppVersion-15.1.0-informational?style=flat-square)
+![Version: 0.0.4](https://img.shields.io/badge/Version-0.0.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 15.1.0](https://img.shields.io/badge/AppVersion-15.1.0-informational?style=flat-square)
 
 A Helm chart for wg-easy
 
@@ -47,7 +47,7 @@ The command removes all the Kubernetes components associated with the chart **ex
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| adminPassword | string | `"changeme"` |  |
+| adminPassword | string | `"changeMyMin12LongPass"` |  |
 | adminUsername | string | `"admin"` |  |
 | affinity | object | `{}` |  |
 | args | list | `[]` |  |
@@ -87,6 +87,7 @@ The command removes all the Kubernetes components associated with the chart **ex
 | global.imageRegistry | string | `""` |  |
 | global.security.allowInsecureImages | bool | `false` |  |
 | global.storageClass | string | `""` |  |
+| host | string | `"wg-easy.local"` |  |
 | hostAliases | list | `[]` |  |
 | image.digest | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |

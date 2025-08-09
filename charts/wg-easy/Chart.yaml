@@ -2,7 +2,7 @@ apiVersion: v2
 name: wg-easy
 description: A Helm chart for wg-easy
 type: application
-version: 0.0.3
+version: 0.0.4
 appVersion: "15.1.0"
 keywords:
   - wg

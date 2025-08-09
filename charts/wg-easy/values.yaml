@@ -59,12 +59,15 @@ extraDeploy: []
 ## @section wg-easy parameters
 ##
 
+## @param host public host clients will connect to
+##
+host: "wg-easy.local"
 ## @param adminUsername wg-easy admin username
 ##
 adminUsername: "admin"
 ## @param adminPassword wg-easy admin password
 ##
-adminPassword: "changeme"
+adminPassword: "changeMyMin12LongPass"
 ## @param dns wireguard dns settings
 ## Example: 1.1.1.1,8.8.8.8
 ##

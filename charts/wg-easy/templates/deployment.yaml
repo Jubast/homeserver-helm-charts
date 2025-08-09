@@ -80,7 +80,7 @@ spec:
               value: {{ .Values.adminPassword | quote }}
             {{- if and .Values.ingress.enabled .Values.ingress.hostname }}
             - name: INIT_HOST
-              value: {{ .Values.ingress.hostname | quote }}
+              value: {{ .Values.host | quote }}
             {{- end }}
             - name: INIT_PORT
               value: {{ .Values.containerPorts.wg | quote }}
