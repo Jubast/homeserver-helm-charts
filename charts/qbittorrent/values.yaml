@@ -59,6 +59,11 @@ extraDeploy: []
 ## @section qbittorrent parameters
 ##
 
+## @param legalNotice whether you had read the legal notice of qBittorrent. Required.
+## Put 'confirm' only if you had read the legal notice.
+##
+legalNotice: ""
+
 ## @param timeZone Specify timezone different from the default (UTC).
 ## For example: "Europe/Ljubljana"
 timeZone: "Etc/UTC"
@@ -75,9 +80,9 @@ timeZone: "Etc/UTC"
 ##
 image:
   registry: docker.io
-  repository: linuxserver/qbittorrent
-  tag: 5.1.2
-  digest: "sha256:a755d9f116b787a0087fd89df77bbc485c363cb88cf0f71348e25c735e77779e"
+  repository: qbittorrentofficial/qbittorrent-nox
+  tag: 5.1.2-2
+  digest: ""
   ## Specify a imagePullPolicy
   ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
   ##

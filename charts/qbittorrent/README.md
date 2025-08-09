@@ -1,6 +1,6 @@
 # qbittorrent
 
-![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 5.1.2](https://img.shields.io/badge/AppVersion-5.1.2-informational?style=flat-square)
+![Version: 0.0.3](https://img.shields.io/badge/Version-0.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 5.1.2](https://img.shields.io/badge/AppVersion-5.1.2-informational?style=flat-square)
 
 A Helm chart for qBittorrent
 
@@ -83,12 +83,12 @@ The command removes all the Kubernetes components associated with the chart **ex
 | global.security.allowInsecureImages | bool | `false` |  |
 | global.storageClass | string | `""` |  |
 | hostAliases | list | `[]` |  |
-| image.digest | string | `"sha256:a755d9f116b787a0087fd89df77bbc485c363cb88cf0f71348e25c735e77779e"` |  |
+| image.digest | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.pullSecrets | list | `[]` |  |
 | image.registry | string | `"docker.io"` |  |
-| image.repository | string | `"linuxserver/qbittorrent"` |  |
-| image.tag | string | `"5.1.2"` |  |
+| image.repository | string | `"qbittorrentofficial/qbittorrent-nox"` |  |
+| image.tag | string | `"5.1.2-2"` |  |
 | ingress.annotations | object | `{}` |  |
 | ingress.apiVersion | string | `""` |  |
 | ingress.enabled | bool | `false` |  |
@@ -105,6 +105,7 @@ The command removes all the Kubernetes components associated with the chart **ex
 | ingress.tls | bool | `false` |  |
 | initContainers | list | `[]` |  |
 | kubeVersion | string | `""` |  |
+| legalNotice | string | `""` |  |
 | lifecycleHooks | object | `{}` |  |
 | livenessProbe.enabled | bool | `true` |  |
 | livenessProbe.failureThreshold | int | `5` |  |

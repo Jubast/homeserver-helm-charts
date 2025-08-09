@@ -2,11 +2,11 @@ apiVersion: v2
 name: qbittorrent
 description: A Helm chart for qBittorrent
 type: application
-version: 0.0.2
+version: 0.0.3
 appVersion: "5.1.2"
 keywords:
-  - python
-  - kms
+  - torrent
+  - qbittorrent
 home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/qbittorrent
 maintainers:
   - name: Jubast
