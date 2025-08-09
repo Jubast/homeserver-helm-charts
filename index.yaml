@@ -195,6 +195,29 @@ entries:
   wg-easy:
   - apiVersion: v2
     appVersion: 15.1.0
+    created: "2025-08-09T13:16:34.906636521Z"
+    dependencies:
+    - name: common
+      repository: https://jubast.github.io/homeserver-helm-charts/
+      version: 1.0.0
+    description: A Helm chart for wg-easy
+    digest: ffbe33aac9f5b961f48cd84aa0880d4aabe7109d1f1515b79dd3692aa8ef83c4
+    home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/wg-easy
+    keywords:
+    - wg
+    - wireguard
+    - wg-easy
+    maintainers:
+    - email: 30406814+Jubast@users.noreply.github.com
+      name: Jubast
+      url: https://github.com/Jubast
+    name: wg-easy
+    type: application
+    urls:
+    - https://github.com/Jubast/homeserver-helm-charts/releases/download/wg-easy-0.0.2/wg-easy-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 15.1.0
     created: "2025-08-09T09:15:24.711880909Z"
     dependencies:
     - name: common
@@ -216,4 +239,4 @@ entries:
     urls:
     - https://github.com/Jubast/homeserver-helm-charts/releases/download/wg-easy-0.0.1/wg-easy-0.0.1.tgz
     version: 0.0.1
-generated: "2025-08-09T09:15:24.711901548Z"
+generated: "2025-08-09T13:16:34.906661488Z"
