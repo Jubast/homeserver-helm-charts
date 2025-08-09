@@ -1,0 +1,6 @@
+dependencies:
+- name: common
+  repository: https://jubast.github.io/homeserver-helm-charts/
+  version: 1.0.0
+digest: sha256:aa8b21541f241ee2c44be9c63de03c72eca78595463e66262793266984ac29a6
+generated: "2025-07-27T11:58:15.730862442+02:00"

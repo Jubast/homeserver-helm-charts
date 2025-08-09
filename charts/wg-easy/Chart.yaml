@@ -1,0 +1,19 @@
+apiVersion: v2
+name: wg-easy
+description: A Helm chart for wg-easy
+type: application
+version: 0.0.1
+appVersion: "15.1.0"
+keywords:
+  - wg
+  - wireguard
+  - wg-easy
+home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/wg-easy
+maintainers:
+  - name: Jubast
+    email: 30406814+Jubast@users.noreply.github.com
+    url: https://github.com/Jubast
+dependencies:
+  - name: common
+    repository: https://jubast.github.io/homeserver-helm-charts/
+    version: 1.0.0
