@@ -82,6 +82,28 @@ entries:
   qbittorrent:
   - apiVersion: v2
     appVersion: 5.1.2
+    created: "2025-08-09T09:15:24.487654367Z"
+    dependencies:
+    - name: common
+      repository: https://jubast.github.io/homeserver-helm-charts/
+      version: 1.0.0
+    description: A Helm chart for qBittorrent
+    digest: 2913baf7361c256df9dc1aa20a7d0ef4183e564e571c88e097fdd6f2a18f24c7
+    home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/qbittorrent
+    keywords:
+    - torrent
+    - qbittorrent
+    maintainers:
+    - email: 30406814+Jubast@users.noreply.github.com
+      name: Jubast
+      url: https://github.com/Jubast
+    name: qbittorrent
+    type: application
+    urls:
+    - https://github.com/Jubast/homeserver-helm-charts/releases/download/qbittorrent-0.0.3/qbittorrent-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 5.1.2
     created: "2025-08-07T17:46:48.914186721Z"
     dependencies:
     - name: common
@@ -127,6 +149,29 @@ entries:
   vaultwarden:
   - apiVersion: v2
     appVersion: 1.34.3
+    created: "2025-08-09T09:15:24.595021165Z"
+    dependencies:
+    - name: common
+      repository: https://jubast.github.io/homeserver-helm-charts/
+      version: 1.0.0
+    description: A Helm chart for vaultwarden
+    digest: b128d9e7aef3bde889ce721e5e5a0a6a4140582502f0c32a3e7a0ddbfe709396
+    home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/vaultwarden
+    keywords:
+    - vaultwarden
+    - bitwarden
+    - password
+    maintainers:
+    - email: 30406814+Jubast@users.noreply.github.com
+      name: Jubast
+      url: https://github.com/Jubast
+    name: vaultwarden
+    type: application
+    urls:
+    - https://github.com/Jubast/homeserver-helm-charts/releases/download/vaultwarden-0.0.2/vaultwarden-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 1.34.3
     created: "2025-08-02T19:43:57.281613715Z"
     dependencies:
     - name: common
@@ -147,4 +192,28 @@ entries:
     urls:
     - https://github.com/Jubast/homeserver-helm-charts/releases/download/vaultwarden-0.0.1/vaultwarden-0.0.1.tgz
     version: 0.0.1
-generated: "2025-08-07T17:46:48.914223492Z"
+  wg-easy:
+  - apiVersion: v2
+    appVersion: 15.1.0
+    created: "2025-08-09T09:15:24.711880909Z"
+    dependencies:
+    - name: common
+      repository: https://jubast.github.io/homeserver-helm-charts/
+      version: 1.0.0
+    description: A Helm chart for wg-easy
+    digest: a79c59fefff3575e3083c2a4568aca0e4e20b5c5cafc09d1adc215925ba00a08
+    home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/wg-easy
+    keywords:
+    - wg
+    - wireguard
+    - wg-easy
+    maintainers:
+    - email: 30406814+Jubast@users.noreply.github.com
+      name: Jubast
+      url: https://github.com/Jubast
+    name: wg-easy
+    type: application
+    urls:
+    - https://github.com/Jubast/homeserver-helm-charts/releases/download/wg-easy-0.0.1/wg-easy-0.0.1.tgz
+    version: 0.0.1
+generated: "2025-08-09T09:15:24.711901548Z"
