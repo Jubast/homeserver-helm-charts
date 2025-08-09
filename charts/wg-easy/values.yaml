@@ -326,7 +326,7 @@ containerSecurityContext:
   runAsGroup: 0
   runAsNonRoot: false
   privileged: true
-  readOnlyRootFilesystem: true
+  readOnlyRootFilesystem: false
   allowPrivilegeEscalation: true
   capabilities:
     drop: ["ALL"]

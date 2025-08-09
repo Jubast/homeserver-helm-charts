@@ -1,6 +1,6 @@
 # wg-easy
 
-![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 15.1.0](https://img.shields.io/badge/AppVersion-15.1.0-informational?style=flat-square)
+![Version: 0.0.3](https://img.shields.io/badge/Version-0.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 15.1.0](https://img.shields.io/badge/AppVersion-15.1.0-informational?style=flat-square)
 
 A Helm chart for wg-easy
 
@@ -63,7 +63,7 @@ The command removes all the Kubernetes components associated with the chart **ex
 | containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | containerSecurityContext.enabled | bool | `true` |  |
 | containerSecurityContext.privileged | bool | `true` |  |
-| containerSecurityContext.readOnlyRootFilesystem | bool | `true` |  |
+| containerSecurityContext.readOnlyRootFilesystem | bool | `false` |  |
 | containerSecurityContext.runAsGroup | int | `0` |  |
 | containerSecurityContext.runAsNonRoot | bool | `false` |  |
 | containerSecurityContext.runAsUser | int | `0` |  |
