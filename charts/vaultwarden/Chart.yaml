@@ -2,11 +2,12 @@ apiVersion: v2
 name: vaultwarden
 description: A Helm chart for vaultwarden
 type: application
-version: 0.0.1
+version: 0.0.2
 appVersion: "1.34.3"
 keywords:
-  - python
-  - kms
+  - vaultwarden
+  - bitwarden
+  - password
 home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/vaultwarden
 maintainers:
   - name: Jubast

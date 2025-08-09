@@ -1,6 +1,6 @@
 # vaultwarden
 
-![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.34.3](https://img.shields.io/badge/AppVersion-1.34.3-informational?style=flat-square)
+![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.34.3](https://img.shields.io/badge/AppVersion-1.34.3-informational?style=flat-square)
 
 A Helm chart for vaultwarden
 
@@ -100,7 +100,7 @@ The command removes all the Kubernetes components associated with the chart **ex
 | iconBlacklistNonGlobalIps | bool | `true` |  |
 | iconRedirectCode | string | `"302"` |  |
 | iconService | string | `"internal"` |  |
-| image.digest | string | `"sha256:84fd8a47f58d79a1ad824c27be0a9492750c0fa5216b35c749863093bfa3c3d7"` |  |
+| image.digest | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.pullSecrets | list | `[]` |  |
 | image.registry | string | `"docker.io"` |  |
