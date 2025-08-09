@@ -70,12 +70,32 @@ spec:
           securityContext: {{- include "common.compatibility.renderSecurityContext" (dict "secContext" .Values.containerSecurityContext "context" $) | nindent 12 }}
           {{- end }}
           env:
+            - name: PORT
+              value: {{ .Values.containerPorts.http | quote }}
+            - name: INIT_ENABLED
+              value: true
+            - name: INIT_USERNAME
+              value: {{ .Values.adminUsername | quote }}
+            - name: INIT_PASSWORD
+              value: {{ .Values.adminPassword | quote }}
             {{- if and .Values.ingress.enabled .Values.ingress.hostname }}
-            - name: WG_HOST
-              value: {{ include "wg-easy.host" . | quote }}
+            - name: INIT_HOST
+              value: {{ .Values.ingress.hostname | quote }}
             {{- end }}
-            - name: WG_PORT
+            - name: INIT_PORT
               value: {{ .Values.containerPorts.wg | quote }}
+            {{- if .Values.dns }}
+            - name: INIT_DNS
+              value: {{ .Values.dns | quote }}
+            {{- end }}
+            {{- if .Values.ipv4CIDR }}
+            - name: INIT_IPV4_CIDR
+              value: {{ .Values.ipv4CIDR | quote }}
+            {{- end }}
+            {{- if .Values.ipv6CIDR }}
+            - name: INIT_IPV6_CIDR
+              value: {{ .Values.ipv6CIDR | quote }}
+            {{- end }}
             {{- if .Values.extraEnvVars }}
             {{- include "common.tplvalues.render" (dict "value" .Values.extraEnvVars "context" $) | nindent 12 }}
             {{- end }}

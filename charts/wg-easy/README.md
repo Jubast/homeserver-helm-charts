@@ -1,6 +1,6 @@
 # wg-easy
 
-![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 15.1.0](https://img.shields.io/badge/AppVersion-15.1.0-informational?style=flat-square)
+![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 15.1.0](https://img.shields.io/badge/AppVersion-15.1.0-informational?style=flat-square)
 
 A Helm chart for wg-easy
 
@@ -47,6 +47,8 @@ The command removes all the Kubernetes components associated with the chart **ex
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| adminPassword | string | `"changeme"` |  |
+| adminUsername | string | `"admin"` |  |
 | affinity | object | `{}` |  |
 | args | list | `[]` |  |
 | automountServiceAccountToken | bool | `false` |  |
@@ -70,6 +72,7 @@ The command removes all the Kubernetes components associated with the chart **ex
 | customLivenessProbe | object | `{}` |  |
 | customReadinessProbe | object | `{}` |  |
 | customStartupProbe | object | `{}` |  |
+| dns | string | `""` |  |
 | extraContainerPorts | list | `[]` |  |
 | extraDeploy | list | `[]` |  |
 | extraEnvVars | list | `[]` |  |
@@ -106,6 +109,8 @@ The command removes all the Kubernetes components associated with the chart **ex
 | ingress.selfSigned | bool | `false` |  |
 | ingress.tls | bool | `false` |  |
 | initContainers | list | `[]` |  |
+| ipv4CIDR | string | `""` |  |
+| ipv6CIDR | string | `""` |  |
 | kubeVersion | string | `""` |  |
 | lifecycleHooks | object | `{}` |  |
 | livenessProbe.enabled | bool | `true` |  |
