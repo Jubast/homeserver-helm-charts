@@ -33,6 +33,9 @@ spec:
   ingress:
     - ports:
         - port: {{ .Values.containerPorts.http }}
+          protocol: TCP
+        - port: {{ .Values.containerPorts.wg }}
+          protocol: UDP
         {{- range .Values.extraContainerPorts }}
         - port: {{ . }}
         {{- end }}
