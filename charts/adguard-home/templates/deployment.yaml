@@ -142,6 +142,10 @@ spec:
           resources: {{- include "common.resources.preset" (dict "type" .Values.resourcesPreset) | nindent 12 }}
           {{- end }}
           volumeMounts:
+            - name: adguard-config
+              mountPath: /opt/adguardhome/conf/AdGuardHome.yaml
+              subPath: AdGuardHome.yaml
+              readOnly: true
             - name: adguard-data
               mountPath: {{ .Values.persistence.dataPath | quote }}
             - name: empty-dir
@@ -155,6 +159,9 @@ spec:
       volumes:
         - name: empty-dir
           emptyDir: {}
+        - name: adguard-config
+          configMap:
+            name: {{ include "common.names.fullname" . }}-config
         - name: adguard-data
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
