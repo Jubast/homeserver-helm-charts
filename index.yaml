@@ -1,5 +1,29 @@
 apiVersion: v1
 entries:
+  adguard-home:
+  - apiVersion: v2
+    appVersion: v0.107.64
+    created: "2025-08-17T09:00:31.354755397Z"
+    dependencies:
+    - name: common
+      repository: https://jubast.github.io/homeserver-helm-charts/
+      version: 1.0.0
+    description: A Helm chart for AdGuard Home
+    digest: bfeb84babfbb5792ed761955bc934cb11a891672c5778b99d4c976d59b8ae913
+    home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/adguard-home
+    keywords:
+    - adguard
+    - adblocker
+    - dns
+    maintainers:
+    - email: 30406814+Jubast@users.noreply.github.com
+      name: Jubast
+      url: https://github.com/Jubast
+    name: adguard-home
+    type: application
+    urls:
+    - https://github.com/Jubast/homeserver-helm-charts/releases/download/adguard-home-0.0.1/adguard-home-0.0.1.tgz
+    version: 0.0.1
   common:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -308,4 +332,4 @@ entries:
     urls:
     - https://github.com/Jubast/homeserver-helm-charts/releases/download/wg-easy-0.0.1/wg-easy-0.0.1.tgz
     version: 0.0.1
-generated: "2025-08-16T18:28:54.816920693Z"
+generated: "2025-08-17T09:00:31.354788288Z"
