@@ -31,6 +31,7 @@ spec:
   ports:
     - name: dns-udp
       port: {{ .Values.service.ports.dns }}
+      protocol: UDP
       targetPort: dns-udp
       {{- if and (or (eq .Values.service.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.dns)) }}
       nodePort: {{ .Values.service.nodePorts.dns }}
@@ -39,6 +40,7 @@ spec:
       {{- end }}
     - name: dns-tcp
       port: {{ .Values.service.ports.dns }}
+      protocol: TCP
       targetPort: dns-tcp
       {{- if and (or (eq .Values.service.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.dns)) }}
       nodePort: {{ .Values.service.nodePorts.dns }}
@@ -47,6 +49,7 @@ spec:
       {{- end }}
     - name: http
       port: {{ .Values.service.ports.http }}
+      protocol: TCP
       targetPort: http
       {{- if and (or (eq .Values.service.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.http)) }}
       nodePort: {{ .Values.service.nodePorts.http }}
