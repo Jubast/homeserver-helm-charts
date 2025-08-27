@@ -1,6 +1,6 @@
 # adguard-home
 
-![Version: 0.0.3](https://img.shields.io/badge/Version-0.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.107.64](https://img.shields.io/badge/AppVersion-v0.107.64-informational?style=flat-square)
+![Version: 0.0.4](https://img.shields.io/badge/Version-0.0.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.107.64](https://img.shields.io/badge/AppVersion-v0.107.64-informational?style=flat-square)
 
 A Helm chart for AdGuard Home
 
@@ -208,13 +208,24 @@ The command removes all the Kubernetes components associated with the chart **ex
 | command | list | `[]` |  |
 | commonAnnotations | object | `{}` |  |
 | commonLabels | object | `{}` |  |
+| containerBootstrap.configPath | string | `"/opt/adguardhome/conf"` |  |
+| containerBootstrap.enabled | bool | `false` |  |
+| containerBootstrap.image.digest | string | `""` |  |
+| containerBootstrap.image.pullPolicy | string | `"IfNotPresent"` |  |
+| containerBootstrap.image.pullSecrets | list | `[]` |  |
+| containerBootstrap.image.registry | string | `"docker.io"` |  |
+| containerBootstrap.image.repository | string | `"busybox"` |  |
+| containerBootstrap.image.tag | float | `1.37` |  |
+| containerBootstrap.resources | object | `{}` |  |
+| containerBootstrap.resourcesPreset | string | `"nano"` |  |
 | containerPorts.dns | int | `5353` |  |
 | containerPorts.http | int | `8080` |  |
 | containerSecurityContext.allowPrivilegeEscalation | bool | `false` |  |
+| containerSecurityContext.capabilities.add[0] | string | `"NET_BIND_SERVICE"` |  |
 | containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | containerSecurityContext.enabled | bool | `true` |  |
 | containerSecurityContext.privileged | bool | `false` |  |
-| containerSecurityContext.readOnlyRootFilesystem | bool | `true` |  |
+| containerSecurityContext.readOnlyRootFilesystem | bool | `false` |  |
 | containerSecurityContext.runAsGroup | int | `1001` |  |
 | containerSecurityContext.runAsNonRoot | bool | `true` |  |
 | containerSecurityContext.runAsUser | int | `1001` |  |
@@ -285,7 +296,7 @@ The command removes all the Kubernetes components associated with the chart **ex
 | pdb.minAvailable | string | `""` |  |
 | persistence.accessModes[0] | string | `"ReadWriteOnce"` |  |
 | persistence.annotations | object | `{}` |  |
-| persistence.dataPath | string | `"/opt/adguardhome"` |  |
+| persistence.dataPath | string | `"/opt/adguardhome/work"` |  |
 | persistence.dataSource | object | `{}` |  |
 | persistence.enabled | bool | `true` |  |
 | persistence.existingClaim | string | `""` |  |

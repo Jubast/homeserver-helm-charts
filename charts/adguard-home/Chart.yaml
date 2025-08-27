@@ -2,7 +2,7 @@ apiVersion: v2
 name: adguard-home
 description: A Helm chart for AdGuard Home
 type: application
-version: 0.0.3
+version: 0.0.4
 appVersion: "v0.107.64"
 keywords:
   - adguard

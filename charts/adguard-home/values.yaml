@@ -366,7 +366,7 @@ persistence:
   enabled: true
   ## @param persistence.dataPath Path to the data directory inside the container
   ##
-  dataPath: /opt/adguardhome
+  dataPath: /opt/adguardhome/work
   ## @param persistence.storageClass PVC Storage Class for AdGuard Home volume
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -495,10 +495,11 @@ containerSecurityContext:
   runAsGroup: 1001
   runAsNonRoot: true
   privileged: false
-  readOnlyRootFilesystem: true
+  readOnlyRootFilesystem: false
   allowPrivilegeEscalation: false
   capabilities:
     drop: ["ALL"]
+    add: ["NET_BIND_SERVICE"]
   seccompProfile:
     type: "RuntimeDefault"
 ## Configure extra options for startup probe
@@ -814,3 +815,59 @@ serviceAccount:
   ## @param serviceAccount.annotations Additional custom annotations for the ServiceAccount
   ##
   annotations: {}
+## @section Volume Permissions parameters
+##
+
+## Init containers parameters:
+## containerBootstrap: Copy the configuration files to the appropriate location.
+##
+containerBootstrap:
+  ## @param containerBootstrap.enabled Enable init container
+  ##
+  enabled: false
+  ## @param containerBootstrap.configPath The directory to where to place the config from configMap
+  ## Default: /opt/adguardhome/conf
+  ##
+  configPath: /opt/adguardhome/conf
+  ## @param containerBootstrap.image.registry [default: REGISTRY_NAME] Init container volume-permissions image registry
+  ## @param containerBootstrap.image.repository [default: REPOSITORY_NAME/os-shell] Init container volume-permissions image name
+  ## @skip containerBootstrap.image.tag Init container volume-permissions image tag
+  ## @param containerBootstrap.image.digest Init container volume-permissions image digest in the way sha256:aa.... Please note this parameter, if set, will override the tag
+  ## @param containerBootstrap.image.pullPolicy Init container volume-permissions image pull policy
+  ## @param containerBootstrap.image.pullSecrets Specify docker-registry secret names as an array
+  ##
+  image:
+    registry: docker.io
+    repository: busybox
+    tag: 1.37
+    digest: ""
+    pullPolicy: IfNotPresent
+    ## Optionally specify an array of imagePullSecrets.
+    ## Secrets must be manually created in the namespace.
+    ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+    ## e.g:
+    ## pullSecrets:
+    ##   - myRegistryKeySecretName
+    ##
+    pullSecrets: []  
+  ## Init containers' resource requests and limits
+  ## ref: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
+  ## We usually recommend not to specify default resources and to leave this as a conscious
+  ## choice for the user. This also increases chances charts run on environments with little
+  ## resources, such as Minikube. If you do want to specify resources, uncomment the following
+  ## lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  ## @param volumePermissions.resourcesPreset Set container resources according to one common preset (allowed values: none, nano, micro, small, medium, large, xlarge, 2xlarge). This is ignored if volumePermissions.resources is set (volumePermissions.resources is recommended for production).
+  ## More information: https://github.com/bitnami/charts/blob/main/bitnami/common/templates/_resources.tpl#L15
+  ##
+  resourcesPreset: "nano"
+  ## @param volumePermissions.resources Set container requests and limits for different resources like CPU or memory (essential for production workloads)
+  ## Example:
+  ## resources:
+  ##   requests:
+  ##     cpu: 2
+  ##     memory: 512Mi
+  ##   limits:
+  ##     cpu: 3
+  ##     memory: 1024Mi
+  ##
+  resources: {}

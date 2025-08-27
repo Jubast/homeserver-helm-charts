@@ -56,6 +56,29 @@ spec:
         {{- if .Values.initContainers }}
         {{- include "common.tplvalues.render" (dict "value" .Values.initContainers "context" $) | nindent 8 }}
         {{- end }}
+        {{- if and .Values.containerBootstrap.enabled }}
+        - name: container-bootstrap
+          image: {{ include "adguard.containerBootstrap.image" . }}
+          imagePullPolicy: {{ .Values.containerBootstrap.image.pullPolicy | quote }}
+          command: 
+            - sh
+            - -c
+            - |
+              cp /tmp/AdGuardHome.yaml {{ .Values.containerBootstrap.configPath }}/AdGuardHome.yaml
+          securityContext:
+            runAsUser: 0
+          {{- if .Values.containerBootstrap.resources }}
+          resources: {{- toYaml .Values.containerBootstrap.resources | nindent 12 }}
+          {{- else if ne .Values.containerBootstrap.resourcesPreset "none" }}
+          resources: {{- include "common.resources.preset" (dict "type" .Values.containerBootstrap.resourcesPreset) | nindent 12 }}
+          {{- end }}
+          volumeMounts:
+            - name: adguard-config-file
+              mountPath: /tmp/AdGuardHome.yaml
+              subPath: AdGuardHome.yaml
+            - name: adguard-config
+              mountPath: {{ .Values.containerBootstrap.configPath }}
+        {{- end }}
       containers:
         - name: adguard
           image: {{ template "adguard.image" . }}
@@ -143,9 +166,7 @@ spec:
           {{- end }}
           volumeMounts:
             - name: adguard-config
-              mountPath: /opt/adguardhome/conf/AdGuardHome.yaml
-              subPath: AdGuardHome.yaml
-              readOnly: true
+              mountPath: {{ .Values.containerBootstrap.configPath | quote }}
             - name: adguard-data
               mountPath: {{ .Values.persistence.dataPath | quote }}
             - name: empty-dir
@@ -159,9 +180,11 @@ spec:
       volumes:
         - name: empty-dir
           emptyDir: {}
-        - name: adguard-config
+        - name: adguard-config-file
           configMap:
             name: {{ include "common.names.fullname" . }}-config
+        - name: adguard-config
+          emptyDir: {}
         - name: adguard-data
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:

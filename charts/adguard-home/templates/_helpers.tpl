@@ -6,6 +6,13 @@ Return the proper AdGuard Home image name
 {{- end -}}
 
 {{/*
+Return the proper image name (for the init container container-bootstrap image)
+*/}}
+{{- define "adguard.containerBootstrap.image" -}}
+{{- include "common.images.image" ( dict "imageRoot" .Values.containerBootstrap.image "global" .Values.global ) -}}
+{{- end -}}
+
+{{/*
 Return the proper Docker Image Registry Secret Names
 */}}
 {{- define "adguard.imagePullSecrets" -}}
