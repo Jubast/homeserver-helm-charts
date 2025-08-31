@@ -1,6 +1,17 @@
 {{- define "custom.install.values.example" -}}
 ```yaml
-# N/A
+ingress:
+  enabled: true
+  class: nginx
+  hostname: your.hostname.here
+
+service:
+  type: LoadBalancer
+  # public ip address (client uses this ip to connect)
+  loadBalancerIP: 127.0.0.1
+
+containerBootstrap:
+  enabled: true
 ```
 {{- end -}}
 

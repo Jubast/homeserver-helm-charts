@@ -1,6 +1,6 @@
 # py-kms
 
-![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 12.12.2022](https://img.shields.io/badge/AppVersion-12.12.2022-informational?style=flat-square)
+![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 12.12.2022](https://img.shields.io/badge/AppVersion-12.12.2022-informational?style=flat-square)
 
 A Helm chart for py-kms KMS server
 
@@ -141,6 +141,7 @@ The command removes all the Kubernetes components associated with the chart **ex
 | service.clusterIP | string | `""` |  |
 | service.externalTrafficPolicy | string | `"Cluster"` |  |
 | service.extraPorts | list | `[]` |  |
+| service.labels | object | `{}` |  |
 | service.loadBalancerIP | string | `""` |  |
 | service.loadBalancerSourceRanges | list | `[]` |  |
 | service.nodePorts.kms | string | `""` |  |

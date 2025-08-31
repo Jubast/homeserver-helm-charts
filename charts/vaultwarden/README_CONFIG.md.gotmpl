@@ -1,6 +1,16 @@
 {{- define "custom.install.values.example" -}}
 ```yaml
-# N/A
+domain: https://your.hostname.here
+## For details see: https://github.com/dani-garcia/vaultwarden/wiki/Enabling-admin-page#secure-the-admin_token
+adminToken: "argon2id$v=19$m=19456,t=2,p=1$Vkx1VkE4RmhDMUhwNm9YVlhPQkVOZk1Yc1duSDdGRVYzd0Y5ZkgwaVg0Yz0$PK+h1ANCbzzmEKaiQfCjWw+hWFaMKvLhG2PjRanH5Kk"
+
+signupsAllowed: true
+timeZone: "UTC"
+
+ingress:
+  enabled: true
+  class: nginx
+  hostname: your.hostname.here
 ```
 {{- end -}}
 

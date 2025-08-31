@@ -1,6 +1,6 @@
 # vaultwarden
 
-![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.34.3](https://img.shields.io/badge/AppVersion-1.34.3-informational?style=flat-square)
+![Version: 0.0.3](https://img.shields.io/badge/Version-0.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.34.3](https://img.shields.io/badge/AppVersion-1.34.3-informational?style=flat-square)
 
 A Helm chart for vaultwarden
 
@@ -30,7 +30,17 @@ helm install vaultwarden jubast-helm-charts/vaultwarden -f values.yaml
 
 ## Values example
 ```yaml
-# N/A
+domain: https://your.hostname.here
+## For details see: https://github.com/dani-garcia/vaultwarden/wiki/Enabling-admin-page#secure-the-admin_token
+adminToken: "argon2id$v=19$m=19456,t=2,p=1$Vkx1VkE4RmhDMUhwNm9YVlhPQkVOZk1Yc1duSDdGRVYzd0Y5ZkgwaVg0Yz0$PK+h1ANCbzzmEKaiQfCjWw+hWFaMKvLhG2PjRanH5Kk"
+
+signupsAllowed: true
+timeZone: "UTC"
+
+ingress:
+  enabled: true
+  class: nginx
+  hostname: your.hostname.here
 ```
 
 ## Uninstalling the Chart
@@ -199,6 +209,7 @@ The command removes all the Kubernetes components associated with the chart **ex
 | service.clusterIP | string | `""` |  |
 | service.externalTrafficPolicy | string | `"Cluster"` |  |
 | service.extraPorts | list | `[]` |  |
+| service.labels | object | `{}` |  |
 | service.loadBalancerIP | string | `""` |  |
 | service.loadBalancerSourceRanges | list | `[]` |  |
 | service.nodePorts.http | string | `""` |  |

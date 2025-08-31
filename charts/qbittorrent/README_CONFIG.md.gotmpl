@@ -1,6 +1,11 @@
 {{- define "custom.install.values.example" -}}
 ```yaml
-# N/A
+legalNotice: confirm
+
+ingress:
+  enabled: true  
+  class: nginx
+  hostname: "your.hostname.here"
 ```
 {{- end -}}
 

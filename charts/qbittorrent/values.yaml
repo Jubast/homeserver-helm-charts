@@ -498,6 +498,9 @@ service:
   ## @param service.extraPorts Extra ports to expose (normally used with the `sidecar` value)
   ##
   extraPorts: []
+  ## @param service.labels Additional custom labels for qbittorrent service
+  ##
+  labels: {}
   ## @param service.annotations Additional custom annotations for qbittorrent service
   ##
   annotations: {}

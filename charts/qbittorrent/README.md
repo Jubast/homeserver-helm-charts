@@ -1,6 +1,6 @@
 # qbittorrent
 
-![Version: 0.0.3](https://img.shields.io/badge/Version-0.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 5.1.2](https://img.shields.io/badge/AppVersion-5.1.2-informational?style=flat-square)
+![Version: 0.0.4](https://img.shields.io/badge/Version-0.0.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 5.1.2](https://img.shields.io/badge/AppVersion-5.1.2-informational?style=flat-square)
 
 A Helm chart for qBittorrent
 
@@ -30,7 +30,12 @@ helm install qbittorrent jubast-helm-charts/qbittorrent -f values.yaml
 
 ## Values example
 ```yaml
-# N/A
+legalNotice: confirm
+
+ingress:
+  enabled: true 
+  class: nginx
+  hostname: "your.hostname.here"
 ```
 
 ## Uninstalling the Chart
@@ -172,6 +177,7 @@ The command removes all the Kubernetes components associated with the chart **ex
 | service.clusterIP | string | `""` |  |
 | service.externalTrafficPolicy | string | `"Cluster"` |  |
 | service.extraPorts | list | `[]` |  |
+| service.labels | object | `{}` |  |
 | service.loadBalancerIP | string | `""` |  |
 | service.loadBalancerSourceRanges | list | `[]` |  |
 | service.nodePorts.http | string | `""` |  |

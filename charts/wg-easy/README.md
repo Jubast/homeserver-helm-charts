@@ -1,6 +1,6 @@
 # wg-easy
 
-![Version: 0.0.5](https://img.shields.io/badge/Version-0.0.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 15.1.0](https://img.shields.io/badge/AppVersion-15.1.0-informational?style=flat-square)
+![Version: 0.0.6](https://img.shields.io/badge/Version-0.0.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 15.1.0](https://img.shields.io/badge/AppVersion-15.1.0-informational?style=flat-square)
 
 A Helm chart for wg-easy
 
@@ -30,7 +30,23 @@ helm install wg-easy jubast-helm-charts/wg-easy -f values.yaml
 
 ## Values example
 ```yaml
-# N/A
+# public ip address (client uses this ip to connect)
+host: '127.0.0.1'
+adminUsername: admin
+adminPassword: changeMeeeeAdmin1234
+
+ingress:
+  enabled: true
+  class: nginx
+  hostname: your.hostname.here
+
+containerPorts:
+  wg: 31820
+
+service:
+  type: NodePort
+  nodePorts:
+    wg: 31820
 ```
 
 ## Uninstalling the Chart
@@ -170,6 +186,7 @@ The command removes all the Kubernetes components associated with the chart **ex
 | service.clusterIP | string | `""` |  |
 | service.externalTrafficPolicy | string | `"Cluster"` |  |
 | service.extraPorts | list | `[]` |  |
+| service.labels | object | `{}` |  |
 | service.loadBalancerIP | string | `""` |  |
 | service.loadBalancerSourceRanges | list | `[]` |  |
 | service.nodePorts.http | string | `""` |  |

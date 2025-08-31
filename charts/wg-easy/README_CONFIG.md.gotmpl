@@ -1,6 +1,22 @@
 {{- define "custom.install.values.example" -}}
 ```yaml
-# N/A
+# public ip address (client uses this ip to connect)
+host: '127.0.0.1'
+adminUsername: admin
+adminPassword: changeMeeeeAdmin1234
+
+ingress:
+  enabled: true
+  class: nginx
+  hostname: your.hostname.here
+
+containerPorts:
+  wg: 31820
+
+service:
+  type: NodePort
+  nodePorts:
+    wg: 31820
 ```
 {{- end -}}
 
