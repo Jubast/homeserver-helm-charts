@@ -3,6 +3,29 @@ entries:
   adguard-home:
   - apiVersion: v2
     appVersion: v0.107.64
+    created: "2025-08-31T16:48:42.599109077Z"
+    dependencies:
+    - name: common
+      repository: https://jubast.github.io/homeserver-helm-charts/
+      version: 1.0.0
+    description: A Helm chart for AdGuard Home
+    digest: d675f50d7b9eeb84dea51e8035594e499a69ae0c290b33b026e6f541c56a987f
+    home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/adguard-home
+    keywords:
+    - adguard
+    - adblocker
+    - dns
+    maintainers:
+    - email: 30406814+Jubast@users.noreply.github.com
+      name: Jubast
+      url: https://github.com/Jubast
+    name: adguard-home
+    type: application
+    urls:
+    - https://github.com/Jubast/homeserver-helm-charts/releases/download/adguard-home-0.0.5/adguard-home-0.0.5.tgz
+    version: 0.0.5
+  - apiVersion: v2
+    appVersion: v0.107.64
     created: "2025-08-27T18:50:26.989076163Z"
     dependencies:
     - name: common
@@ -114,6 +137,28 @@ entries:
   py-kms:
   - apiVersion: v2
     appVersion: 12.12.2022
+    created: "2025-08-31T16:48:42.737586979Z"
+    dependencies:
+    - name: common
+      repository: https://jubast.github.io/homeserver-helm-charts/
+      version: 1.0.0
+    description: A Helm chart for py-kms KMS server
+    digest: f6b369f4b27852024dc5af33549060aa576f1512114983ff35a4b8b7268c9790
+    home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/py-kms
+    keywords:
+    - python
+    - kms
+    maintainers:
+    - email: 30406814+Jubast@users.noreply.github.com
+      name: Jubast
+      url: https://github.com/Jubast
+    name: py-kms
+    type: application
+    urls:
+    - https://github.com/Jubast/homeserver-helm-charts/releases/download/py-kms-0.1.3/py-kms-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 12.12.2022
     created: "2025-07-27T18:26:27.819878741Z"
     dependencies:
     - name: common
@@ -173,6 +218,28 @@ entries:
     - https://github.com/Jubast/homeserver-helm-charts/releases/download/py-kms-0.1.0/py-kms-0.1.0.tgz
     version: 0.1.0
   qbittorrent:
+  - apiVersion: v2
+    appVersion: 5.1.2
+    created: "2025-08-31T16:48:42.893832639Z"
+    dependencies:
+    - name: common
+      repository: https://jubast.github.io/homeserver-helm-charts/
+      version: 1.0.0
+    description: A Helm chart for qBittorrent
+    digest: 3089845b9901f4e9c52ae6a1035b06ea64d5e570699928770e61a7dccbb933c8
+    home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/qbittorrent
+    keywords:
+    - torrent
+    - qbittorrent
+    maintainers:
+    - email: 30406814+Jubast@users.noreply.github.com
+      name: Jubast
+      url: https://github.com/Jubast
+    name: qbittorrent
+    type: application
+    urls:
+    - https://github.com/Jubast/homeserver-helm-charts/releases/download/qbittorrent-0.0.4/qbittorrent-0.0.4.tgz
+    version: 0.0.4
   - apiVersion: v2
     appVersion: 5.1.2
     created: "2025-08-09T09:15:24.487654367Z"
@@ -242,6 +309,29 @@ entries:
   vaultwarden:
   - apiVersion: v2
     appVersion: 1.34.3
+    created: "2025-08-31T16:48:43.092013718Z"
+    dependencies:
+    - name: common
+      repository: https://jubast.github.io/homeserver-helm-charts/
+      version: 1.0.0
+    description: A Helm chart for vaultwarden
+    digest: f72948e3322e66b42ed6c1bc5fb0a5f9944a8980035bf87cd059fae4f9f1e965
+    home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/vaultwarden
+    keywords:
+    - vaultwarden
+    - bitwarden
+    - password
+    maintainers:
+    - email: 30406814+Jubast@users.noreply.github.com
+      name: Jubast
+      url: https://github.com/Jubast
+    name: vaultwarden
+    type: application
+    urls:
+    - https://github.com/Jubast/homeserver-helm-charts/releases/download/vaultwarden-0.0.3/vaultwarden-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 1.34.3
     created: "2025-08-09T09:15:24.595021165Z"
     dependencies:
     - name: common
@@ -286,6 +376,29 @@ entries:
     - https://github.com/Jubast/homeserver-helm-charts/releases/download/vaultwarden-0.0.1/vaultwarden-0.0.1.tgz
     version: 0.0.1
   wg-easy:
+  - apiVersion: v2
+    appVersion: 15.1.0
+    created: "2025-08-31T16:48:43.255680258Z"
+    dependencies:
+    - name: common
+      repository: https://jubast.github.io/homeserver-helm-charts/
+      version: 1.0.0
+    description: A Helm chart for wg-easy
+    digest: 64842944cab02b3475eb4f1c349a655dc5b1d2994e3ceb31b53a4df9578693dd
+    home: https://github.com/Jubast/homeserver-helm-charts/tree/main/charts/wg-easy
+    keywords:
+    - wg
+    - wireguard
+    - wg-easy
+    maintainers:
+    - email: 30406814+Jubast@users.noreply.github.com
+      name: Jubast
+      url: https://github.com/Jubast
+    name: wg-easy
+    type: application
+    urls:
+    - https://github.com/Jubast/homeserver-helm-charts/releases/download/wg-easy-0.0.6/wg-easy-0.0.6.tgz
+    version: 0.0.6
   - apiVersion: v2
     appVersion: 15.1.0
     created: "2025-08-16T18:28:54.816865029Z"
@@ -401,4 +514,4 @@ entries:
     urls:
     - https://github.com/Jubast/homeserver-helm-charts/releases/download/wg-easy-0.0.1/wg-easy-0.0.1.tgz
     version: 0.0.1
-generated: "2025-08-27T18:50:26.989122775Z"
+generated: "2025-08-31T16:48:43.255748216Z"
